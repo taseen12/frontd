@@ -238,7 +238,7 @@ export default function BasicInfoPage() {
       return success;
     },
     isLoading: residentForm.isLoading,
-    rooms: residentForm.rooms,
+    rooms: residentForm.availableRooms,
     groups: residentForm.groups,
     indigenousStatus: residentForm.indigenousStatus,
     loadingIndigenousStatus: residentForm.loadingIndigenousStatus

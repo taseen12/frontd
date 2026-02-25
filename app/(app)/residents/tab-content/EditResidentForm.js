@@ -137,11 +137,15 @@ export default function EditResidentForm({
                 className="border border-gray-300 rounded px-3 py-2 text-sm bg-white focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-300"
               >
                 <option value="">Select Room</option>
-                {rooms?.map((room) => (
-                  <option key={room.id} value={room.id}>
-                    {room.name || room.roomNumber}
-                  </option>
-                ))}
+                {rooms && rooms.length > 0 ? (
+                  rooms.map((room) => (
+                    <option key={room.id} value={room.id}>
+                      {room.name || room.roomName || `Room ${room.id}`}
+                    </option>
+                  ))
+                ) : (
+                  <option value="" disabled>No rooms available</option>
+                )}
               </select>
             </div>
             <div className="flex flex-col">
